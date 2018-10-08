@@ -39,6 +39,7 @@ RUN curl -Lo kubebox https://github.com/astefanutti/kubebox/releases/download/v0
 RUN curl -Lo kubetail https://raw.githubusercontent.com/johanhaleby/kubetail/master/kubetail \
     && chmod +x kubetail
 
+#### <TO BE TESTED AND TWEAKS> ####
 #RUN sh -c "git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/themes/powerlevel9k/" \
 #    sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd 
 
@@ -51,6 +52,7 @@ RUN curl -Lo kubetail https://raw.githubusercontent.com/johanhaleby/kubetail/mas
 # RUN sh -c "git clone https://github.com/tony/tmux-config.git .tmux"
 # RUN sh -c "git clone https://github.com/ryanoasis/nerd-fonts.git"
 # RUN sh -c "~/nerd-fonts/install.sh" \
+#### </ TO BE TESTED AND TWEAKS> ####
 
 COPY zshrc /root/.zshrc
 
