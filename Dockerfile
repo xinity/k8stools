@@ -2,10 +2,15 @@ FROM ruby:2.5-alpine
 
 LABEL maintainer="Rachid Zarouali <xinity77@gmail.com>"
 
-RUN apk update && \
-    apk add --no-cache git zsh curl tmux python bash vim && \
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true \
-    && rm -f /tmp/* /etc/apk/cache/*
+RUN apk --update --no-cache add \
+        bash \
+        curl \
+        git \
+        python \
+        tmux \
+        vim \
+        zsh \
+    && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
 
 WORKDIR /usr/local/bin
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
